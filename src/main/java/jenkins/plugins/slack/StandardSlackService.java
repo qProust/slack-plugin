@@ -90,6 +90,10 @@ public class StandardSlackService implements SlackService {
         return result;
     }
 
+    public String getUserId(String email) {
+        return "";
+    }
+
     protected HttpClient getHttpClient() {
         HttpClient client = new HttpClient();
         if (Jenkins.getInstance() != null) {
@@ -105,7 +109,7 @@ public class StandardSlackService implements SlackService {
                     // and
                     // http://svn.apache.org/viewvc/httpcomponents/oac.hc3x/trunk/src/examples/BasicAuthenticationExample.java?view=markup
                     client.getState().setProxyCredentials(AuthScope.ANY,
-                        new UsernamePasswordCredentials(username, password));
+                            new UsernamePasswordCredentials(username, password));
                 }
             }
         }
